@@ -1,0 +1,15 @@
+bool areFollowingPatterns(std::vector<std::string> strings, std::vector<std::string> patterns) {
+
+map<string,int> m1;
+map<string,int> m2;
+
+for (int i=0;i< strings.size();i++)
+{
+    m1[strings[i]] = m1[strings[i]]+1;
+    m2[patterns[i]] = m2[patterns[i]]+1;
+    
+    if(m1[strings[i]]!=m2[patterns[i]]) return false;
+}
+return true;
+
+}
